@@ -21,4 +21,18 @@ Route::get('(:bundle)', function()
 	$pass_signer->sign(true);
 });
 
+Route::post('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', function(){
+	
+	
+	
+});
+
+Route::delete('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', function(){
+	
+	
+	
+});
+
+
+
 ?>

@@ -1,6 +1,7 @@
 <?php
 
-class Passkitserver_Create_Devices_Table {
+class Passkitserver_Create_Devices_Table
+{
 
 	/**
 	 * Make changes to the database.
@@ -9,7 +10,14 @@ class Passkitserver_Create_Devices_Table {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('devices', function($table)
+		{
+		    $table->increments('id');
+		    $table->string('device_id', 100);
+		    $table->string('push_token', 100);
+		    $table->timestamps();
+		    $table->unique('device_id');
+		});
 	}
 
 	/**
@@ -19,7 +27,7 @@ class Passkitserver_Create_Devices_Table {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('devices');
 	}
 
 }

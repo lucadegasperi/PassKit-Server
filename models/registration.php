@@ -11,13 +11,13 @@ class Registration extends Eloquent
 	
 	public function pass()
 	{
-		$this->has_one('Pass', 'serial_number');
+		return $this->belongs_to('PassKitServer\Models\Pass', 'serial_number');
 	}
 	
-	public function device()
+	/*public function device()
 	{
 		$this->has_one('Device', 'device_id');
-	}
+	}*/
 }
 
 

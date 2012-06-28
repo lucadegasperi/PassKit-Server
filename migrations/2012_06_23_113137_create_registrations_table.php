@@ -14,6 +14,7 @@ class Passkitserver_Create_Registrations_Table
 		{
 		    $table->increments('id');
 		    $table->string('device_id', 100);
+		    $table->string('pass_type', 100);
 		    $table->string('serial_number', 100);
 		    $table->timestamps();
 		    $table->index('device_id');

@@ -13,7 +13,7 @@ class Passkitserver_Create_Passes_Table
 		Schema::create('passes', function($table)
 		{
 			$table->increments('id');
-		    $table->string('serial_number', 100);
+			$table->string('serial_number', 100);
 		    $table->string('auth_token', 100);
 		    
 		    /* add you custom pass fields here */

@@ -8,10 +8,11 @@ class Pass extends Eloquent
 {
 	public static $table = 'passes';
 	public static $timestamps = true;
+	public static $key = 'serial_number';
 	
 	public function registrations()
 	{
-		$this->has_many('Registration', 'serial_number');
+		return $this->has_many('PassKitServer\Models\Registration', 'serial_number');
 	}
 	
 	public function generate()

@@ -156,7 +156,10 @@ class PassSigner
 		
 		$this->signature_url = $this->temporary_path . DS . 'signature';
 		
+		$ok = false;
+		
 		$ok = openssl_pkcs12_read(File::get($this->certificate_url), $p12_certificate, $this->certificate_password);
+		
 		if(!$ok)
 		{
 			echo 'error reading the certiticate';

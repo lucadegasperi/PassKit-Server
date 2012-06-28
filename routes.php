@@ -95,7 +95,9 @@ Route::delete('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', array(
 	'before' => 'check_auth_token',
 	function($device, $pass_type, $serial_number)
 	{	
-	
+		Log::info('device_id: '.$device_id);
+		Log::info('pass_type: '.$pass_type);
+		Log::info('serial_number: '.$serial_number);
 	}
 ));
 
@@ -117,7 +119,8 @@ Route::get('(:bundle)/passes/(:any)/(:any)', array(
 Route::get('(:bundle)/log', array(
 	'name' => 'get_log',
 	function()
-	{	
+	{
+		Log::info('started viewing log');
 		$it = new \RecursiveDirectoryIterator(path('storage').'logs');
 
 		foreach(new \RecursiveIteratorIterator($it) as $file)

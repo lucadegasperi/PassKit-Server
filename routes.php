@@ -64,6 +64,8 @@ Route::get('(:bundle)/devices/(:any)/registrations/(:any)', array(
 		$response['serialNumbers'] = $serials;
 		$response['lastUpdated'] = $new_last_updated;
 		
+		Log::info(json_encode($response));
+		
 		return Response::json($response);
 	}
 ));
@@ -84,7 +86,7 @@ Route::post('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', array(
 		Log::info('device_id: '.$device_id);
 		Log::info('pass_type: '.$pass_type);
 		Log::info('serial_number: '.$serial_number);
-		Log::info(Input::all());
+		Log::info(json_encode(Input::all()));
 	}
 ));
 
@@ -112,12 +114,25 @@ Route::get('(:bundle)/passes/(:any)/(:any)', array(
 	}
 ));
 
+Route::get('(:bundle)/log', array(
+	'name' => 'get_log',
+	function()
+	{	
+		$it = new \RecursiveDirectoryIterator(path('storage').'logs');
+
+		foreach(new \RecursiveIteratorIterator($it) as $file)
+		{
+			echo File::get($file->getPathname());
+		}
+	}
+));
+
 Route::post('(:bundle)/log', array(
-	'name' => 'post_device',
+	'name' => 'post_log',
 	'before' => 'check_auth_token',
 	function()
 	{	
-		Log::info(Input::all());
+		Log::info(json_encode(Input::all()));
 	}
 ));
 

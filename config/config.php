@@ -4,11 +4,11 @@ return array(
 
 	'temporary_directory' => path('storage') . 'work',
 	
-	'certificate_url' => Bundle::path('passkitserver'). 'contents' . DS . 'certificates' . DS . 'certificate.p12',
+	'certificate_url' => path('storage') . 'passkitserver' . DS . 'certificates' . DS . 'certificate.p12',
 	
-	'pass_url' => Bundle::path('passkitserver'). 'contents' . DS . 'passes' . DS . 'Coupon',
+	'pass_url' => path('storage') . 'passkitserver' . DS . 'artworks' . DS . 'Coupon',
 	
-	'output_url' => path('storage') . 'passes'. DS . 'Coupon.pkpass',
+	'output_url' => path('storage') . 'passkitserver' . DS . 'passes'. DS . 'Coupon.pkpass',
 
 );
 

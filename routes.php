@@ -86,7 +86,8 @@ Route::post('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', array(
 		Log::info('device_id: '.$device_id);
 		Log::info('pass_type: '.$pass_type);
 		Log::info('serial_number: '.$serial_number);
-		Log::info(json_encode($_SERVER));
+		$postdata = file_get_contents("php://input");
+		Log::info($postdata);
 	}
 ));
 

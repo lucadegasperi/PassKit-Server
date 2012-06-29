@@ -3,8 +3,8 @@
   "passTypeIdentifier" : "pass.com.lucadegasperi.boardingpass",
   "serialNumber" : "123456789046",
   "teamIdentifier" : "VE52JTVP3X",
-  "webServiceUrl": "https://passkitserver.pagodabox.com",
-  "authenticationToken": "1234567890",
+  "webServiceURL" : "https://passkitserver.pagodabox.com/",
+  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
   "barcode" : {
     "message" : "123456789",
     "format" : "PKBarcodeFormatPDF417",

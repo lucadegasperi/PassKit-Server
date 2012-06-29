@@ -86,14 +86,14 @@ Route::post('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', array(
 		Log::info('device_id: '.$device_id);
 		Log::info('pass_type: '.$pass_type);
 		Log::info('serial_number: '.$serial_number);
-		//Log::info(json_encode(Input::all()));
+		Log::info(json_encode(Input::all()));
 	}
 ));
 
 Route::delete('(:bundle)/devices/(:any)/registrations/(:any)/(:any)', array(
 	'name' => 'delete_device',
 	'before' => 'check_auth_token',
-	function($device, $pass_type, $serial_number)
+	function($device_id, $pass_type, $serial_number)
 	{	
 		Log::info('device_id: '.$device_id);
 		Log::info('pass_type: '.$pass_type);
@@ -120,7 +120,6 @@ Route::get('(:bundle)/log', array(
 	'name' => 'get_log',
 	function()
 	{
-		Log::info('started viewing log');
 		$it = new \RecursiveDirectoryIterator(path('storage').'logs');
 
 		foreach(new \RecursiveIteratorIterator($it) as $file)
